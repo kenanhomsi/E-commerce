@@ -11,7 +11,11 @@ const Product = () => {
 
 
     const {id}=useParams();
-    const [product,setProduct]=useState<Products |any>();
+    const [product,setProduct]=useState<Products |{title:string,
+      image:string,category:string,id:number,
+      description:string,price:number,rating?:{rate:number}} >({title:'',
+        image:'',category:'',id:0,
+        description:'',price:0,rating:{rate:0}});
     const [loading,setLoading]=useState(false);
     useEffect(()=>{
         const getProducts= async ()=>{
